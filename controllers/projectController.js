@@ -247,8 +247,8 @@ exports.getProjectMembers = catchAsync(async (req, res, next) => {
     return next(new AppError("There is no project with the provided id", 404));
   }
 
-  console.log(project.members.includes(req.user.id));
-  console.log(project.creator.equals(req.user.id));
+  // console.log(project.members.includes(req.user.id));
+  // console.log(project.creator.equals(req.user.id));
 
   if (
     project.members.includes(req.user.id) ||

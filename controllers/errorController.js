@@ -2,7 +2,7 @@ const AppError = require("../utils/AppError");
 
 const handleCastErrorDB = (err) => {
   const message = `Invalid ${err.path}: ${err.value}.`;
-  console.log("handle cast error");
+  // console.log("handle cast error");
   return new AppError(message, 400);
 };
 
@@ -10,7 +10,7 @@ const handleCastErrorDB = (err) => {
 const handleDuplicateFieldsDB = (err) => {
   const value = err.message.match(/(["'])(\\?.)*?\1/)[0];
   // const value = err.message.split("index: ")[1].split(" dup key")[0];
-  console.log(err.message);
+  // console.log(err.message);
 
   const message = `Duplicate field value: ${value}. Please use another value!`;
   return new AppError(message, 400);
